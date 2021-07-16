@@ -6,7 +6,7 @@
 #    By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/09 14:39:53 by abouhlel          #+#    #+#              #
-#    Updated: 2021/07/17 01:04:10 by bledda           ###   ########.fr        #
+#    Updated: 2021/07/17 01:23:06 by bledda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,9 +51,6 @@ OBJS_UTILS			= ${SRC_UTILS:.c=.o}
 CC					= gcc
 CFLAGS  			= -Wall -Wextra -Werror
 RM					= rm -rf
-
-COMPIL_LINE_LINUX	= $(CC) $(CFLAGS) ${OBJ} $(LIBS) -o $(NAME)
-COMPIL_LINE_MAC		= $(CC) $(CFLAGS) ${OBJ} $(LIBS) $(LIBS_MAC) -o $(NAME)
 
 ifdef MINITALK_BONUS
 OBJ_SERVER			= $(OBJS_UTILS) $(OBJS_SERVER_BONUS)
