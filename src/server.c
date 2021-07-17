@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:37:35 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/16 22:18:55 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/17 00:36:20 by bledda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../header/minitalk.h"
 
-void	ft_send_msg(int num)
+static void	ft_send_msg(int num)
 {
 	static char	b;
 	static int	pos;
@@ -28,7 +28,7 @@ void	ft_send_msg(int num)
 	}
 }
 
-void	coco(int x, siginfo_t *y, void *z)
+static void	coco(int x, siginfo_t *y, void *z)
 {
 	(void)z;
 	ft_send_msg(x);
@@ -52,7 +52,8 @@ int	main(int argc, char **argv)
 		sigaction(SIGUSR1, &s, NULL);
 		sigaction(SIGUSR2, &s, NULL);
 		while (1)
-			pause();
+		{
+		}
 	}
 	return (0);
 }

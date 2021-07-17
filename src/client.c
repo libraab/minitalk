@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client_bonus.c                                     :+:      :+:    :+:   */
+/*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bledda <bledda@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 14:40:24 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/16 23:23:53 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/07/09 14:40:10 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/07/17 00:36:13 by bledda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk_bonus.h"
+#include "../header/minitalk.h"
 
 static int	g_global = 0;
 
-void	ft_loula(int sig)
+static void	ft_loula(int sig)
 {
 	(void)sig;
 	g_global = 1;
 }
 
-int	ft_convert_char(char c, int pid)
+static int	ft_convert_char(char c, int pid)
 {
 	int	x;
 	int	y;
@@ -47,13 +47,13 @@ int	ft_convert_char(char c, int pid)
 	return (1);
 }
 
-void	ft_error_msg(void)
+static void	ft_error_msg(void)
 {
 	write(2, "Invalid PID.\n", 14);
 	exit (EXIT_FAILURE);
 }
 
-void	ft_check_error(int ac, char **av, int pid)
+static void	ft_check_error(int ac, char **av, int pid)
 {
 	int	i;
 	int	x;
@@ -102,6 +102,5 @@ int	main(int ac, char **av)
 			exit (EXIT_FAILURE);
 		}
 	}
-	write(1, "Message received.\n", 18);
 	exit (EXIT_SUCCESS);
 }
