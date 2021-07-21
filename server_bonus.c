@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitlak_bonus.h                                   :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 23:01:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/17 18:04:09 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/07/09 14:41:04 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/07/21 08:07:12 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_BONUS_H
-# define MINITALK_BONUS_H
+#include "minitalk_bonus.h"
 
-#include "minitalk.h"
+int	main(int argc, char **argv)
+{
+	int					pid;
+	struct sigaction	s;
 
-#endif
+	(void)argv;
+	if (argc == 1)
+	{
+		pid = getpid();
+		ft_putstr("My pid is: ");
+		ft_putnbr(pid);
+		ft_putchar('\n');
+		s.sa_flags = SA_SIGINFO;
+		s.sa_sigaction = coco;
+		sigaction(SIGUSR1, &s, NULL);
+		sigaction(SIGUSR2, &s, NULL);
+		while (1)
+			pause();
+	}
+	return (0);
+}

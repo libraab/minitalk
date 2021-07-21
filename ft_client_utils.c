@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client_bonus.c                                     :+:      :+:    :+:   */
+/*   ft_client_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 18:05:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/17 18:05:23 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/07/21 07:56:04 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/07/21 08:08:56 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/minitalk_bonus.h"
+#include "minitalk_bonus.h"
+#include "minitalk.h"
 
 static int	g_global = 0;
 
-static void	ft_loula(int sig)
+void	ft_loula(int sig)
 {
 	(void)sig;
 	g_global = 1;
 }
 
-static int	ft_convert_char(char c, int pid)
+int	ft_convert_char(char c, int pid)
 {
 	int	x;
 	int	y;
@@ -47,13 +48,13 @@ static int	ft_convert_char(char c, int pid)
 	return (1);
 }
 
-static void	ft_error_msg(void)
+void	ft_error_msg(void)
 {
 	write(2, "Invalid PID.\n", 14);
 	exit (EXIT_FAILURE);
 }
 
-static void	ft_check_error(int ac, char **av, int pid)
+void	ft_check_error(int ac, char **av, int pid)
 {
 	int	i;
 	int	x;
@@ -77,31 +78,30 @@ static void	ft_check_error(int ac, char **av, int pid)
 	}
 }
 
-int	main(int ac, char **av)
+int	ft_atoi(const char *str)
 {
-	int	pid;
+	long	sign;
+	long	neg;
+	long	a;
+	long	i;
 
-	signal(SIGUSR1, ft_loula);
-	if (ac == 1)
+	sign = 1;
+	neg = 0;
+	a = 0;
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\f' || str[i] == '\v' || str[i] == '\r')
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		write(2, "A PID and a String are missing.\n", 37);
-		exit (EXIT_FAILURE);
+		if (neg > 0)
+			return (0);
+		if (str[i] == '-')
+			sign = -sign;
+		neg++;
+		i++;
 	}
-	if (ac > 1 && ac < 4)
-	{
-		pid = ft_atoi(av[1]);
-		ft_check_error(ac, av, pid);
-		if (pid == 0)
-		{
-			write(2, "Error PID.\n", 12);
-			exit (EXIT_FAILURE);
-		}
-		if (ac == 2)
-		{
-			write(2, "A PID or a String is missing.\n", 33);
-			exit (EXIT_FAILURE);
-		}
-	}
-	write(1, "Message received.\n", 18);
-	exit (EXIT_SUCCESS);
+	while (str[i] >= '0' && str[i] <= '9')
+		a = a * 10 + (str[i++] - '0');
+	return ((int)a * sign);
 }

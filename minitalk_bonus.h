@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   minitlak_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 18:04:20 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/17 18:04:22 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/07/16 23:01:39 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/07/21 08:12:20 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
-# include <unistd.h>
-# include <stdlib.h>
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(const char *str);
+# include "minitalh.h"
 
 #endif

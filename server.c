@@ -1,39 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_bonus.c                                     :+:      :+:    :+:   */
+/*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 18:05:33 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/17 18:05:35 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/07/09 14:37:35 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/07/21 08:07:16 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/minitalk_bonus.h"
-
-static void	ft_send_msg(int num)
-{
-	static char	b;
-	static int	pos;
-
-	if (num == SIGUSR1)
-		b += 1 << (7 - pos);
-	pos++;
-	if (pos == 8)
-	{
-		ft_putchar(b);
-		pos = 0;
-		b = 0;
-	}
-}
-
-static void	coco(int x, siginfo_t *y, void *z)
-{
-	(void)z;
-	ft_send_msg(x);
-	kill(y->si_pid, SIGUSR1);
-}
+#include "minitalk.h"
 
 int	main(int argc, char **argv)
 {
@@ -52,8 +29,7 @@ int	main(int argc, char **argv)
 		sigaction(SIGUSR1, &s, NULL);
 		sigaction(SIGUSR2, &s, NULL);
 		while (1)
-		{
-		}
+			pause();
 	}
 	return (0);
 }
