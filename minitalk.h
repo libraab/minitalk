@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:40:38 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/16 22:24:14 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/21 11:11:48 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_loula(int sig);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
-void	ft_send_msg(int num);
+void	ft_putbit(int num);
 void	coco(int x, siginfo_t *y, void *z);
 int		ft_convert_char(char c, int pid);
 int		ft_atoi(const char *str);

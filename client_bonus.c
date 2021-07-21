@@ -6,13 +6,11 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:40:24 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 08:00:08 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/21 09:39:27 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
-
-static int	g_global = 0;
 
 int	main(int ac, char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 07:56:04 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 08:08:56 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/21 13:04:03 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_convert_char(char c, int pid)
 			usleep(100);
 			y = kill(pid, SIGUSR2);
 		}
+		if (kill(pid, SIGUSR1) == -1 || kill(pid, SIGUSR2) == -1)
+			return (0);
 		x--;
 		while (g_global == 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 22:15:53 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 08:08:28 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/21 11:01:12 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_putnbr(int nb)
 	ft_putchar(nb % 10 + '0');
 }
 
-void	ft_send_msg(int num)
+void	ft_putbit(int num)
 {
 	static char	b;
 	static int	pos;
@@ -62,6 +62,6 @@ void	ft_send_msg(int num)
 void	coco(int x, siginfo_t *y, void *z)
 {
 	(void)z;
-	ft_send_msg(x);
+	ft_putbit(x);
 	kill(y->si_pid, SIGUSR1);
 }

@@ -6,31 +6,31 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/09 14:39:53 by abouhlel          #+#    #+#              #
-#    Updated: 2021/07/16 23:22:07 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/07/21 09:38:39 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minitalk
 
-CF = utils.c
-
 C = client.c
 
 S = server.c
+
+CF = ft_server_utils.c ft_client_utils.c
 
 CB = client_bonus.c
 
 SB = server_bonus.c
 
-CFOBJ = $(CF:.c=.o)
-
 COBJ = $(C:.c=.o)
 
 SOBJ = $(S:.c=.o)
 
-SBOBJ = $(SB:.c=.o)
+CFOBJ = $(CF:.c=.o)
 
 CBOBJ = $(CB:.c=.o)
+
+SBOBJ = $(SB:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -60,7 +60,7 @@ bonus:
 		$(MAKE) MINITALK_BONUS=1
 		
 clean:
-		rm -rf $(CFOBJ) $(SOBJ) $(SBOBJ) $(CBOBJ) $(COBJ)
+		rm -rf $(CFOBJ) $(CBOBJ) $(COBJ) $(SOBJ) $(SBOBJ)
 
 fclean: clean
 		rm -rf client server
