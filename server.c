@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:37:35 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 08:07:16 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/21 17:02:03 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		ft_putnbr(pid);
 		ft_putchar('\n');
 		s.sa_flags = SA_SIGINFO;
-		s.sa_sigaction = coco;
+		s.sa_sigaction = ft_putbit;
 		sigaction(SIGUSR1, &s, NULL);
 		sigaction(SIGUSR2, &s, NULL);
 		while (1)

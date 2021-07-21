@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 22:15:53 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 11:01:12 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/07/21 17:18:43 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@ void	ft_putnbr(int nb)
 	ft_putchar(nb % 10 + '0');
 }
 
-void	ft_putbit(int num)
+void	ft_putbit(int num, siginfo_t *y, void *z)
 {
 	static char	b;
 	static int	pos;
 
+	(void)z;
 	if (num == SIGUSR1)
 		b += 1 << (7 - pos);
 	pos++;
@@ -57,11 +58,5 @@ void	ft_putbit(int num)
 		pos = 0;
 		b = 0;
 	}
-}
-
-void	coco(int x, siginfo_t *y, void *z)
-{
-	(void)z;
-	ft_putbit(x);
 	kill(y->si_pid, SIGUSR1);
 }
