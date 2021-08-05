@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:40:38 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 16:57:28 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:38:50 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	ft_check_error(int ac, char **av, int pid);
 void	ft_error_msg(void);
-void	ft_loula(int sig);
+void	ft_loula(int i);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);

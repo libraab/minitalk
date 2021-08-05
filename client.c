@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:40:10 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 09:39:32 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:32:21 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ int	main(int ac, char **av)
 	{
 		pid = ft_atoi(av[1]);
 		ft_check_error(ac, av, pid);
-		if (pid == 0)
-		{
-			write(2, "Error PID.\n", 12);
-			exit (EXIT_FAILURE);
-		}
 		if (ac == 2)
 		{
 			write(2, "A PID or a String is missing.\n", 33);

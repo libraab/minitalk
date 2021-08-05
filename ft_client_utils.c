@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 07:56:04 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/07/21 18:03:32 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:39:34 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 #include "minitalk.h"
 
 static int	g_global = 0;
-static int	g_signo;
-static int	g_count = 0;
 
-void	ft_loula(int sig)
+void	ft_loula(int i)
 {
-	if ((g_count == 0) || g_signo == sig)
-	{
+		(void)i;
 		g_global = 1;
-		g_signo = sig;
-		g_count++;
-	}
 }
 
 int	ft_convert_char(char c, int pid)
